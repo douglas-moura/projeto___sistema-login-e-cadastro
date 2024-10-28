@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./output.css" rel="stylesheet">
+        <title>Document</title>
+    </head>
+    <body class="">
+        <main id="login-page" class="">
+            <section class="h-dvh justify-between">
+                <div class="container">
+                    <span class="mx-auto items-center bg-indigo-700 aspect-square w-2/6" style="border-radius: 39% 61% 60% 40% / 30% 43% 57% 70%;">
+                        <iconify-icon icon="hugeicons:banana" height="40" class="m-auto text-white"></iconify-icon>
+                    </span>
+                    <p class="m-0 font-extrabold text-xs text-center">Banana isFit</p>
+                </div>
+                <div id="login-form" class="container mb-8">
+                    <h2>Login</h2>
+                    <form action="">
+                        <span>
+                            <label for="input-email" class="text-xs mb-1">E-mail:</label>
+                            <input type="email" name="e-mail" id="input-email" class="border-[1px] border-gray-300 rounded-lg py-2 px-3 text-xs outline-none">
+                        </span>
+                        <span>
+                            <label for="input-senha" class="text-xs mb-1">Senha:</label>
+                            <span class="flex-row items-center relative">
+                                <input type="password" name="senha" id="input-senha" class="w-full border-[1px] border-gray-300 rounded-lg py-2 px-3 text-xs outline-none z-40">
+                                <iconify-icon icon="clarity:eye-hide-line" id="btn-ver-senha" class="absolute my-auto mx-3 right-0 text-indigo-700 z-50 cursor-pointer"></iconify-icon>
+                            </span>
+                            <a class="text-xss text-indigo-700 text-right">Recuperar senha</a>
+                        </span>
+                        <input type="submit" value="Entrar" id="btn-login" class="btn btn-01">
+                        <p class="text-xss text-center mt-8">Ainda não tem cadastrado? <a class="text-indigo-700 font-extrabold">Cadastre-se</a></p>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <script src="./index.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    </body>
+</html>
