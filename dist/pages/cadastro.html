@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../output.css" rel="stylesheet">
+        <title>Document</title>
+    </head>
+    <body class="">
+        <main id="home-page" class="main-pagina-interna">
+            <section id="bloco-alert" class="fixed z-50 hidden">
+                <div id="alert-content" class="container rounded-lg shadow-md">
+                    <span class="flex-row items-center text-white">
+                        <iconify-icon id="icon-alert" icon="akar-icons:triangle-alert" height="20" class="mr-2"></iconify-icon>
+                        <p id="msg-alert" class="">Alerta</p>
+                    </span>
+                </div>
+            </section>
+            <section class="">
+                <div class="container">
+                    <h2 class="">Cadastre-se</h2>
+                    <form id="form-cadastro" action="" method="post" class="pt-4">
+                        <span>
+                            <label for="" class="text-xss mb-0">Nome Completo:</label>
+                            <input type="text" name="nome" id="input-nome" class="input-campo">
+                        </span>
+                        <span>
+                            <label id="lb-email" for="" class="text-xss mb-0">E-mail:</label>
+                            <input type="email" name="email" id="input-email" class="input-campo">
+                        </span>
+                        <span>
+                            <label for="" class="text-xss mb-0">Senha:</label>
+                            <input type="password" name="senha" id="input-senha" class="input-campo">
+                        </span>
+                        <span>
+                            <label for="" class="text-xss mb-0">Confirme a senha:</label>
+                            <input type="password" name="c-senha" id="input-c-senha" class="input-campo">
+                            <p id="alert-senha" class="mt-1 text-red-600 text-xss font-semibold hidden">As senhas precisam ser iguais</p>
+                        </span>
+                        <span class="flex-row">
+                            <input type="checkbox" name="check-termos" id="check-termos" class="mr-2">
+                            <label for="check-termos" class="text-xss">Li e aceito os Termo de Segurança</label>
+                        </span>
+                        <input id="btn-cadastrar" type="submit" value="Cadastrar" id="btn-login" class="btn btn-desativado mt-4">
+                    </form>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <a href="../index.html" class="text-indigo-700">Voltar</a>
+                </div>
+            </section>
+        </main>
+        <script src="../index.js"></script>
+        <script type="module" src="../helpers/cadastro.js"></script>
+        <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+    </body>
+</html>
