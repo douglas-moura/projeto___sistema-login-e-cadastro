@@ -1,14 +1,36 @@
-export const autenticarUsuario2 = async (email, senha) => {
-    if (email != '' && senha != '') {
-        try {
-            const response = await fetch(`http://localhost:3000/users?email=${email}&senha=${senha}`);
-            const data = await response.json();
-            console.log(data);
-            return data.length == 1 ? true : false;
-        }
-        catch (e) {
-            console.error(e);
+export const autenticarUsuario = async (email, senha, tipo) => {
+    let resultado = false;
+    if (tipo == 'login') {
+        if (email != '' && senha != '') {
+            try {
+                const response = await fetch(`http://localhost:3000/users?email=${email}&senha=${senha}`);
+                const data = await response.json();
+                resultado = data.length == 1 ? true : false;
+                return resultado;
+            }
+            catch (err) {
+                console.error(err);
+            }
         }
     }
-    return false;
+    else if (tipo == 'cadastro') {
+        if (email != '') {
+            try {
+                const response = await fetch(`http://localhost:3000/users?email=${email}`);
+                const data = await response.json();
+                data.forEach((element) => {
+                    if (element.email == email) {
+                        resultado = true;
+                    }
+                });
+                return resultado;
+            }
+            catch (err) {
+                console.error(err);
+            }
+        }
+    }
+    else {
+        return false;
+    }
 };

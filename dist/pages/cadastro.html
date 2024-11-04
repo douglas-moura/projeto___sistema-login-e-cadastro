@@ -4,18 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../output.css" rel="stylesheet">
-        <title>Document</title>
+        <title>Cadastre-se</title>
     </head>
     <body class="">
-        <main id="home-page" class="main-pagina-interna">
-            <section id="bloco-alert" class="fixed z-50 hidden">
-                <div id="alert-content" class="container rounded-lg shadow-md">
-                    <span class="flex-row items-center text-white">
-                        <iconify-icon id="icon-alert" icon="akar-icons:triangle-alert" height="20" class="mr-2"></iconify-icon>
-                        <p id="msg-alert" class="">Alerta</p>
-                    </span>
-                </div>
-            </section>
+        <main id="pagina" class="main-pagina-interna">
             <section class="">
                 <div class="container">
                     <h2 class="">Cadastre-se</h2>
@@ -30,7 +22,23 @@
                         </span>
                         <span>
                             <label for="" class="text-xss mb-0">Senha:</label>
-                            <input type="password" name="senha" id="input-senha" class="input-campo">
+                            <input type="password" name="senha" id="input-senha" class="input-campo mb-1">
+                            <p id="valid-senha-num" class="text-neutral-400 text-xss flex items-center">
+                                <iconify-icon id="valid-senha-num-icon" icon="akar-icons:x-small" height="12" class="mr-1"></iconify-icon>
+                                conter um número
+                            </p>
+                            <p id="valid-senha-mai" class="text-neutral-400 text-xss flex items-center">
+                                <iconify-icon id="valid-senha-mai-icon" icon="akar-icons:x-small" height="12" class="mr-1"></iconify-icon>
+                                conter uma letra maiúscula
+                            </p>
+                            <p id="valid-senha-sim" class="text-neutral-400 text-xss flex items-center">
+                                <iconify-icon id="valid-senha-sim-icon" icon="akar-icons:x-small" height="12" class="mr-1"></iconify-icon>
+                                conter ao menos um símbolo
+                            </p>
+                            <p id="valid-senha-tam" class="text-neutral-400 text-xss flex items-center">
+                                <iconify-icon id="valid-senha-tam-icon" icon="akar-icons:x-small" height="12" class="mr-1"></iconify-icon>
+                                conter pelo menos 8 caracteres
+                            </p>
                         </span>
                         <span>
                             <label for="" class="text-xss mb-0">Confirme a senha:</label>
@@ -51,8 +59,7 @@
                 </div>
             </section>
         </main>
-        <script src="../index.js"></script>
-        <script type="module" src="../helpers/cadastro.js"></script>
+        <script src="../index.js" type="module"></script>
         <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     </body>
 </html>

@@ -1,33 +1,17 @@
+export const popup = (tipo: string, msg: string) => {
 
-export const verificarUsuario = async (email: string): Promise<boolean> => {
-    interface User {
-        id: string,
-        nome: string,
-        email: string,
-        senha: string
-    }
-
-    let resultado: boolean = false
+    const mainPage = document.getElementById('pagina') as HTMLElement
     
-    if (email != '') {
-        try {
-            const response = await fetch(`http://localhost:3000/users?email=${email}`)
-            const data = await response.json()
-            console.log(data)
-            data.forEach((element: User) => {
-                if (element.email == email) {
-                    resultado = true
-                }
-            })
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
-    return resultado
-}
-
-export const exibirAlerta = (tipo: string, msg: string) => {
+    mainPage.innerHTML +=
+        `<section id="bloco-alert" class="absolute z-50 top-0 mt-4">
+            <div id="alert-content" class="container rounded-lg shadow-md">
+                <span class="flex-row items-center text-white">
+                    <iconify-icon id="icon-alert" icon="akar-icons:triangle-alert" height="20" class="mr-2"></iconify-icon>
+                    <p id="msg-alert" class="">Alerta</p>
+                </span>
+            </div>
+        </section>`
+        
     const alertBox = document.getElementById('bloco-alert') as HTMLElement
     const alertContent = document.getElementById('alert-content') as HTMLElement
     const alertIcone = document.getElementById('icon-alert') as HTMLElement
