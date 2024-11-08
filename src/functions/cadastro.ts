@@ -1,7 +1,7 @@
-import { Cadastro } from "../helpers/interfaces.js"
+import { User } from "../helpers/interfaces.js"
 import { autenticarUsuario } from "../helpers/autenticarUsuario.js"
 
-export const cadastrarUsuario = async (data: Cadastro): Promise<boolean> => {
+export const cadastrarUsuario = async (data: User): Promise<boolean> => {
     
     if (await autenticarUsuario(data.email, data.senha, 'cadastro') == false) {
 
@@ -17,7 +17,6 @@ export const cadastrarUsuario = async (data: Cadastro): Promise<boolean> => {
             if (!response.ok) {
                 throw new Error(`Erro na requisição: ${response.status}`);
             }
-
         } catch (err) {
             console.error('Erro ao fazer POST:', err);
         }
@@ -36,33 +35,41 @@ export const validaSenha = (senha: string) => {
 
     if (contemNumero) {
         document.getElementById('valid-senha-num')!.classList.add('text-green-500')
+        document.getElementById('valid-senha-num')!.classList.remove('text-neutral-400')
         document.getElementById('valid-senha-num-icon')!.attributes[1].value = 'akar-icons:check'
     } else {
         document.getElementById('valid-senha-num')!.classList.remove('text-green-500')
+        document.getElementById('valid-senha-num')!.classList.add('text-neutral-400')
         document.getElementById('valid-senha-num-icon')!.attributes[1].value = 'akar-icons:x-small'
     }
 
     if (contemLetraMaiuscula) {
         document.getElementById('valid-senha-mai')!.classList.add('text-green-500')
+        document.getElementById('valid-senha-mai')!.classList.remove('text-neutral-400')
         document.getElementById('valid-senha-mai-icon')!.attributes[1].value = 'akar-icons:check'
     } else {
         document.getElementById('valid-senha-mai')!.classList.remove('text-green-500')
+        document.getElementById('valid-senha-mai')!.classList.add('text-neutral-400')
         document.getElementById('valid-senha-mai-icon')!.attributes[1].value = 'akar-icons:x-small'
     }
 
     if (contemSimbolo) {
         document.getElementById('valid-senha-sim')!.classList.add('text-green-500')
+        document.getElementById('valid-senha-sim')!.classList.remove('text-neutral-400')
         document.getElementById('valid-senha-sim-icon')!.attributes[1].value = 'akar-icons:check'
     } else {
         document.getElementById('valid-senha-sim')!.classList.remove('text-green-500')
+        document.getElementById('valid-senha-sim')!.classList.add('text-neutral-400')
         document.getElementById('valid-senha-sim-icon')!.attributes[1].value = 'akar-icons:x-small'
     }
 
     if (tamanhoSenha) {
         document.getElementById('valid-senha-tam')!.classList.add('text-green-500')
+        document.getElementById('valid-senha-tam')!.classList.remove('text-neutral-400')
         document.getElementById('valid-senha-tam-icon')!.attributes[1].value = 'akar-icons:check'
     } else {
         document.getElementById('valid-senha-tam')!.classList.remove('text-green-500')
+        document.getElementById('valid-senha-tam')!.classList.add('text-neutral-400')
         document.getElementById('valid-senha-tam-icon')!.attributes[1].value = 'akar-icons:x-small'
     }
 
@@ -89,9 +96,7 @@ export const aceitarTermos = (inputId: string, btnId: string): void => {
 
     const checkTermosSeguranca = document.getElementById(inputId) as HTMLInputElement
 
-    checkTermosSeguranca.addEventListener('click', function () {
-        console.log(this.value)
-        
+    checkTermosSeguranca.addEventListener('click', function () {        
         if (this.value == 'on' && document.getElementById(btnId)!.classList.contains('btn-desativado')) {
             this.value = 'off'
             document.getElementById(btnId)!.classList.remove('btn-desativado')

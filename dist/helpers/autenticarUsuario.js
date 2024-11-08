@@ -1,10 +1,10 @@
+import { getUser } from "../helpers/getUser.js";
 export const autenticarUsuario = async (email, senha, tipo) => {
     let resultado = false;
     if (tipo == 'login') {
         if (email != '' && senha != '') {
             try {
-                const response = await fetch(`http://localhost:3000/users?email=${email}&senha=${senha}`);
-                const data = await response.json();
+                const data = await getUser(`?email=${email}&senha=${senha}`);
                 resultado = data.length == 1 ? true : false;
                 return resultado;
             }
@@ -16,8 +16,7 @@ export const autenticarUsuario = async (email, senha, tipo) => {
     else if (tipo == 'cadastro') {
         if (email != '') {
             try {
-                const response = await fetch(`http://localhost:3000/users?email=${email}`);
-                const data = await response.json();
+                const data = await getUser(`?email=${email}`);
                 data.forEach((element) => {
                     if (element.email == email) {
                         resultado = true;

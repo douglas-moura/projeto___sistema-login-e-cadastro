@@ -24,7 +24,7 @@
                             </a>
                         </li>
                         <li class="link-nav">
-                            <a href="../index.html">
+                            <a href="../pages/login.html">
                                 <iconify-icon icon="tabler:logout" height="16" class="mr-1 mx-auto"></iconify-icon>
                                 <p>Sair</p>
                             </a>
@@ -37,23 +37,17 @@
             <section class="">
                 <div class="container">
                     <h2 class="">Perfil</h2>
-                    <table>
-                        <tr class="h-8">
-                            <td class="linha-perfil"><strong>Nome:</strong></td>
-                            <td class="linha-perfil">João de Souza</td>
-                        </tr>
-                        <tr class="h-8">
-                            <td class="linha-perfil"><strong>E-mail:</strong></td>
-                            <td class="linha-perfil">joao.souza@email.com.br</td>
-                        </tr>
-                        <tr class="h-8">
-                            <td class="linha-perfil"><strong>Tel.:</strong></td>
-                            <td class="linha-perfil">+55 11 98765-4321</td>
-                        </tr>
-                        <tr class="h-8">
-                            <td class="linha-perfil"><strong>Nasc.:</strong></td>
-                            <td class="linha-perfil">01 / 02 / 93</td>
-                        </tr>
+                    <table class="w-full table-fixed">
+                        <tbody>
+                            <tr class="h-8">
+                                <td class="linha-perfil w-1/3"><strong>Nome:</strong></td>
+                                <td id="user-nome" class="linha-perfil truncate"></td>
+                            </tr>
+                            <tr class="h-8">
+                                <td class="linha-perfil w-1/3"><strong>E-mail:</strong></td>
+                                <td id="user-email" class="linha-perfil truncate"></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </section>

@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply font-montserrat text-base text-gray-700 bg-gray-200
+        @apply font-montserrat text-base text-neutral-700 bg-neutral-200
     }
 
     section {
@@ -60,7 +60,7 @@
     }
 
     .input-campo {
-        @apply border-[1px] border-gray-400 rounded py-2 px-3 text-xs outline-none
+        @apply border-[1px] border-neutral-400 rounded py-2 px-3 text-xs outline-none
     }
 
     .btn {
@@ -88,7 +88,7 @@
     }
 
     .linha-perfil {
-        @apply text-xs pr-4
+        @apply text-xs
     }
 }
 

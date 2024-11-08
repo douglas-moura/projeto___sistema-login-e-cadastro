@@ -1,8 +1,9 @@
 import { fazerLogin, mostrarSenha } from "./functions/login.js"
 import { cadastrarUsuario, aceitarTermos, alertaSenhas, validaSenha } from "./functions/cadastro.js"
 import { popup } from "./helpers/alertaPopup.js"
-import { Cadastro } from "./helpers/interfaces.js"
+import { User } from "./helpers/interfaces.js"
 import { novaID } from "./helpers/usuarios.js"
+import { getUser } from "./helpers/getUser.js"
 
 console.log(window.location.pathname)
 
@@ -15,15 +16,15 @@ window.addEventListener('load', () => {
     }, 1000);
 })
 
-// Página de Login
-if (window.location.pathname == '/dist/index.html') {
+// LOGIN
+if (window.location.pathname == '/dist/pages/login.html') {
     // fazer login
     document.getElementById('btn-login')!.addEventListener('click', async (e) => {
         e.preventDefault()
-        
+
         const userEmail = document.getElementById('input-email') as HTMLInputElement
         const userSenha = document.getElementById('input-senha') as HTMLInputElement
-
+        
         fazerLogin(userEmail.value, userSenha.value)
     })
     
@@ -36,7 +37,7 @@ if (window.location.pathname == '/dist/index.html') {
     })
 }
 
-// Página de Cadastro
+// CADASTRO
 if (window.location.pathname == '/dist/pages/cadastro.html') {
     // inputs do form de cadastro
     const nome = document.getElementById('input-nome') as HTMLInputElement
@@ -61,25 +62,46 @@ if (window.location.pathname == '/dist/pages/cadastro.html') {
     aceitarTermos('check-termos', 'btn-cadastrar')
 
     // cadastrar usuario
-    document.getElementById('btn-cadastrar')!.addEventListener('click', async (e) => {
-        e.preventDefault()     
+    document.getElementById('form-cadastro')!.addEventListener('submit', async (e) => {
+        e.preventDefault()
+        console.log("Formulário submetido sem recarregar a página.")
 
-        const novoCadastro: Cadastro = {
+        const novoCadastro: User = {
             id: await novaID(),
             nome: nome.value,
             email: email.value,
             senha: senha.value
         }
 
-        if (await cadastrarUsuario(novoCadastro) && alertaSenhas(senha, confirm)) {
+        const statusCadastro = await cadastrarUsuario(novoCadastro)
+        
+
+        if (statusCadastro && alertaSenhas(senha, confirm)) {
+            console.log('cadastrado');
+            
             popup('sucesso', 'Cadastrado com sucesso!')
             setTimeout(() => {
-                window.location.replace('http://127.0.0.1:5500/dist/pages/inicio.html')
-            }, 2000)
+                window.location.replace('http://127.0.0.1:5500/dist/inicio.html')
+            }, 3000)
         } else {
             email.classList.add('border-[1px]')
             email.classList.add('border-red-500')
             popup('erro', 'E-mail já cadastrado')
         }
+    })
+}
+
+// PERFIL
+if (window.location.pathname == '/dist/pages/perfil.html') {
+    window.addEventListener('load', async () => {
+        try {
+            const userInfos: User[] = await getUser(`?email=${sessionStorage.getItem("user")}`)
+            console.log(userInfos);
+            
+            document.getElementById('user-nome')!.innerText = userInfos[0].nome
+            document.getElementById('user-email')!.innerText = userInfos[0].email
+        } catch (err) {
+            console.error(err)
+        }        
     })
 }

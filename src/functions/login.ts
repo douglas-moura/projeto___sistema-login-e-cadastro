@@ -6,6 +6,7 @@ export const fazerLogin = async (e: string, s: string): Promise<void> => {
     const status = await autenticarUsuario(e, s, 'login')
     
     if (status) {
+        sessionStorage.setItem("user", e);
         setTimeout(() => {
             window.location.href = 'http://127.0.0.1:5500/dist/pages/inicio.html'
         }, 1000)
