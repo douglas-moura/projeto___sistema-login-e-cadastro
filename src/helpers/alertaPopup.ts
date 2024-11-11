@@ -1,13 +1,13 @@
 export const popup = (tipo: string, msg: string) => {
 
-    const mainPage = document.getElementById('pagina') as HTMLElement
+    const mainPage = document.getElementById('popup-box') as HTMLElement
     
     mainPage.innerHTML +=
         `<section id="bloco-alert" class="absolute z-50 top-0 mt-4">
             <div id="alert-content" class="container rounded-lg shadow-md">
                 <span class="flex-row items-center text-white">
-                    <iconify-icon id="icon-alert" icon="akar-icons:triangle-alert" height="20" class="mr-2"></iconify-icon>
-                    <p id="msg-alert" class="">Alerta</p>
+                    <iconify-icon id="icon-alert" icon="akar-icons:" height="20" class="mr-2"></iconify-icon>
+                    <p id="msg-alert" class=""></p>
                 </span>
             </div>
         </section>`
@@ -18,6 +18,7 @@ export const popup = (tipo: string, msg: string) => {
     const alertMsg = document.getElementById('msg-alert') as HTMLElement
     
     alertBox.classList.remove('hidden')
+
     if (tipo == 'erro') {
         alertContent.classList.add('bg-red-700')
         alertIcone.attributes[1].value = 'akar-icons:triangle-alert'
@@ -31,7 +32,9 @@ export const popup = (tipo: string, msg: string) => {
         alertIcone.attributes[1].value = 'akar-icons:info'
         alertMsg.innerText = msg
     }
+    
     setTimeout(() => {
         alertBox.classList.add('hidden')
-    }, 3000);
+        alertBox.remove()
+    }, 3000)
 }

@@ -1,25 +1,18 @@
-import { autenticarUsuario } from "../helpers/autenticarUsuario.js";
 export const cadastrarUsuario = async (data) => {
-    if (await autenticarUsuario(data.email, data.senha, 'cadastro') == false) {
-        try {
-            const response = await fetch('http://localhost:3000/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
-            }
+    try {
+        const response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
         }
-        catch (err) {
-            console.error('Erro ao fazer POST:', err);
-        }
-        return true;
     }
-    else {
-        return false;
+    catch (err) {
+        console.error('Erro ao fazer POST:', err);
     }
 };
 export const validaSenha = (senha) => {
@@ -97,4 +90,8 @@ export const aceitarTermos = (inputId, btnId) => {
             document.getElementById(btnId).classList.add('btn-desativado');
         }
     });
+};
+export const validarEmail = (email) => {
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    return regex.test(email);
 };

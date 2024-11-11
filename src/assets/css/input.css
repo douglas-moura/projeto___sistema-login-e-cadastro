@@ -60,7 +60,7 @@
     }
 
     .input-campo {
-        @apply border-[1px] border-neutral-400 rounded py-2 px-3 text-xs outline-none
+        @apply border-[1px] border-neutral-400 rounded py-2 px-3 text-xs outline-none caret-indigo-500
     }
 
     .btn {

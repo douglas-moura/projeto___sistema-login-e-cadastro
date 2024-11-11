@@ -1,30 +1,23 @@
 import { User } from "../helpers/interfaces.js"
-import { autenticarUsuario } from "../helpers/autenticarUsuario.js"
 
-export const cadastrarUsuario = async (data: User): Promise<boolean> => {
+export const cadastrarUsuario = async (data: User) => {
     
-    if (await autenticarUsuario(data.email, data.senha, 'cadastro') == false) {
-
-        try {
-            const response = await fetch('http://localhost:3000/users', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            
-            if (!response.ok) {
-                throw new Error(`Erro na requisição: ${response.status}`);
-            }
-        } catch (err) {
-            console.error('Erro ao fazer POST:', err);
+    try {
+        const response = await fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        
+        if (!response.ok) {
+            throw new Error(`Erro na requisição: ${response.status}`);
         }
-
-        return true            
-    } else {
-        return false
+    } catch (err) {
+        console.error('Erro ao fazer POST:', err);
     }
+
 }
 
 export const validaSenha = (senha: string) => {
@@ -107,5 +100,10 @@ export const aceitarTermos = (inputId: string, btnId: string): void => {
             document.getElementById(btnId)!.classList.add('btn-desativado')
         }
     })
+}
 
+export const validarEmail = (email: string): boolean => {
+    // Expressão regular para e-mails válidos
+    const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    return regex.test(email)
 }

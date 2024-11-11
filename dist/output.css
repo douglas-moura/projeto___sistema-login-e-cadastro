@@ -676,6 +676,7 @@ form{
   padding-right: 0.75rem;
   font-size: 0.75rem;
   line-height: 1rem;
+  caret-color: #6366f1;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -892,9 +893,18 @@ form{
   border-width: 1px;
 }
 
+.border{
+  border-width: 1px;
+}
+
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-indigo-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(99 102 241 / var(--tw-border-opacity));
 }
 
 .bg-amber-500{
@@ -980,11 +990,6 @@ form{
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-neutral-500{
-  --tw-text-opacity: 1;
-  color: rgb(115 115 115 / var(--tw-text-opacity));
 }
 
 .shadow-md{
