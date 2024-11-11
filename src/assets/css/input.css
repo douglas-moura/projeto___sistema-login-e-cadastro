@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+    sm	640px	@media (min-width: 640px) { ... }
+    md	768px	@media (min-width: 768px) { ... }
+    lg	1024px	@media (min-width: 1024px) { ... }
+    xl	1280px	@media (min-width: 1280px) { ... }
+    2xl	1536px	@media (min-width: 1536px) { ... }
+*/
+
 @layer base {
     * {
         @apply m-0 p-0 box-border
@@ -52,7 +60,7 @@
 
 @layer components {
     .container {
-        @apply grid gap-2 mx-auto w-5/6 p-4
+        @apply grid gap-2 mx-auto w-5/6 p-4 lg:w-2/6
     }
 
     .main-pagina-interna {

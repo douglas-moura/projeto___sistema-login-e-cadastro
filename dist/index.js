@@ -7,7 +7,7 @@ import { autenticarUsuario } from "./helpers/autenticarUsuario.js";
 console.log(window.location.pathname);
 window.addEventListener('load', () => {
     setTimeout(() => {
-        if (window.location.pathname == '/index.html') {
+        if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
             window.location.href = 'http://127.0.0.1:5500/dist/pages/login.html';
         }
     }, 10);

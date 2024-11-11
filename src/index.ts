@@ -11,7 +11,7 @@ console.log(window.location.pathname)
 // direcionar para login
 window.addEventListener('load', () => {
     setTimeout(() => {
-        if (window.location.pathname == '/index.html') {
+        if (window.location.pathname == '/index.html' || window.location.pathname == '/') {
             window.location.href = 'http://127.0.0.1:5500/dist/pages/login.html'
         }
     }, 10);
@@ -50,7 +50,7 @@ if (window.location.pathname == '/dist/pages/cadastro.html') {
     senha.addEventListener('input', () => {
         validaSenha(senha.value)
     })
-    
+
     // alerta de senhas
     senha.addEventListener('input', () => {
         alertaSenhas(senha, confirm)
