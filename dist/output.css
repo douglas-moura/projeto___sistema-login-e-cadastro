@@ -855,6 +855,18 @@ form{
   width: 100%;
 }
 
+.w-1\/6{
+  width: 16.666667%;
+}
+
+.w-2\/4{
+  width: 50%;
+}
+
+.w-1\/4{
+  width: 25%;
+}
+
 .table-fixed{
   table-layout: fixed;
 }
@@ -893,18 +905,9 @@ form{
   border-width: 1px;
 }
 
-.border{
-  border-width: 1px;
-}
-
 .border-red-500{
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-
-.border-indigo-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(99 102 241 / var(--tw-border-opacity));
 }
 
 .bg-amber-500{
@@ -944,6 +947,11 @@ form{
   text-align: right;
 }
 
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-sm{
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -952,6 +960,16 @@ form{
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-xl{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .font-extrabold{
