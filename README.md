@@ -23,18 +23,20 @@ Clone o repositório e instale as dependências:
 git clone https://github.com/douglas-moura/login.git
 cd login
 npm install
+```
 
 ## Uso
 
 Execute o projeto com:
 
-bash
-Copiar código
+```bash
 npm start
-Licença
+```
+
+## Licença
+
 Este projeto está licenciado sob a MIT License.
 
-csharp
-Copiar código
-
+```csharp
 Esse README agora inclui informações sobre as funcionalidades de validação e confirmação de cadastro.
+```
