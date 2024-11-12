@@ -1,6 +1,6 @@
 # Sistema de Autenticação
 
-Este projeto implementa um sistema de autenticação front-end com TypeScript, HTML e Tailwind CSS. Ele inclui páginas de login e registro, além de validação básica de credenciais.
+Exemplo de sistema de autenticação de usuários, implementado em TypeScript, HTML e CSS com o uso de Tailwind CSS. A configuração básica é voltada para o desenvolvimento de interfaces de login e registro, com suporte para validação de credenciais.
 
 ## Funcionalidades
 
