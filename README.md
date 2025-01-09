@@ -25,12 +25,19 @@ cd login
 npm install
 ```
 
+## Executando servidor
+
+```bash
+npm install json-server
+json-server --watch  ./db/db.json
+```
+
 ## Uso
 
 Execute o projeto com:
 
 ```bash
-npm start
+tsc -w
 ```
 
 ## Licença
