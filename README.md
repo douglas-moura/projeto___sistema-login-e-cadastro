@@ -12,17 +12,27 @@ Exemplo de sistema de autenticação de usuários, implementado em TypeScript, H
 
 ## Pré-requisitos
 
-- Node.js
-- npm (ou yarn)
+Antes de começar, certifique-se de ter os seguintes programas instalados:
+
+- **Node.js**
+- **npm** (ou **yarn**)
+- **Visual Studio Code** com a extensão **Live Server**
 
 ## Instalação
 
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/douglas-moura/login.git
+git clone https://github.com/douglas-moura/projeto___sistema-login-e-cadastro
 cd login
 npm install
+```
+
+## Executando servidor
+
+```bash
+npm install json-server
+json-server --watch  ./db/db.json
 ```
 
 ## Uso
@@ -30,7 +40,7 @@ npm install
 Execute o projeto com:
 
 ```bash
-npm start
+tsc -w
 ```
 
 ## Licença
